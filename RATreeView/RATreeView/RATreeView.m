@@ -461,6 +461,9 @@
 - (id)itemForSelectedRow
 {
   NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+  if (!indexPath) {
+    return nil;
+  }
   return [self treeNodeForIndexPath:indexPath].item;
 }
 
