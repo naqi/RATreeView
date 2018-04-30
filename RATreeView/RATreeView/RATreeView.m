@@ -472,7 +472,7 @@
 
 - (void)selectRowForItem:(id)item animated:(BOOL)animated scrollPosition:(RATreeViewScrollPosition)scrollPosition
 {
-  if ([self isCellForItemExpanded:[self parentForItem:item]]) {
+  if ([self isCellForItemExpanded:[self parentForItem:item]] || [self parentForItem:item] == nil){
     NSIndexPath *indexPath = [self indexPathForItem:item];
     UITableViewScrollPosition tableViewScrollPosition = [RATreeView tableViewScrollPositionForTreeViewScrollPosition:scrollPosition];
     [self.tableView selectRowAtIndexPath:indexPath animated:animated scrollPosition:tableViewScrollPosition];
@@ -481,7 +481,7 @@
 
 - (void)deselectRowForItem:(id)item animated:(BOOL)animated
 {
-  if ([self isCellForItemExpanded:[self parentForItem:item]]) {
+  if ([self isCellForItemExpanded:[self parentForItem:item]] || [self parentForItem:item] == nil){
     NSIndexPath *indexPath = [self indexPathForItem:item];
     [self.tableView deselectRowAtIndexPath:indexPath animated:animated];
   }
