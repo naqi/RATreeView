@@ -265,6 +265,12 @@
   }
 }
 
+#pragma mark - UIScrollView delegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    if ([self.delegate respondsToSelector:@selector(treeViewDidScroll:)]) {
+        [self.delegate treeViewDidScroll:self.tableView];
+    }
+}
 
 #pragma mark - Private Helpers
 

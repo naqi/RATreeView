@@ -245,6 +245,12 @@ typedef enum RATreeViewRowAnimation {
  */
 - (void)treeView:(RATreeView *)treeView didCollapseRowForItem:(id)item;
 
+/**
+ *  Tells the delegate that the tree view was scrolled.
+ *
+ *  @param scrollView     A uiscrollview object informing the delegate that new row is collapsed.
+ */
+- (void)treeViewDidScroll:(UIScrollView *)scrollView;
 
 ///------------------------------------------------
 /// @name Managing Selections
