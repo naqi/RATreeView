@@ -102,7 +102,7 @@
   if ([self.delegate respondsToSelector:@selector(treeView:didSelectRowForItem:)]) {
     [self.delegate treeView:self didSelectRowForItem:treeNode.item];
   }
-  
+  /* TODO: Find a better way for allowing this to be an option
   if (treeNode.expanded) {
     if ([self.delegate respondsToSelector:@selector(treeView:shouldCollapaseRowForItem:)]) {
       if ([self.delegate treeView:self shouldCollapaseRowForItem:treeNode.item]) {
@@ -119,7 +119,7 @@
     } else {
       [self expandCellForTreeNode:treeNode informDelegate:YES];
     }
-  }
+  } */
 }
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willDeselectRowAtIndexPath:(NSIndexPath *)indexPath
